@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メディアストリーム録画APIのデモ</title>
     <script src="/js/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="../../dconnectsdk-2.1.0.js"></script>
+    <script type="text/javascript" src="../../dconnectsdk-2.2.0.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -55,17 +55,17 @@
               $("#checkDeviceConnect").text(errorMessage);
             });
         });
-        
+
         $("#getToken").on("click", function(e) {
           e.preventDefault();
           getAuthentication();
         });
-        
+
         $("#takePhoto").on("click", function(e) {
           e.preventDefault();
           takePhoto();
         });
-        
+
         var getAuthentication = function() {
           dConnect.authorization(app.scopes, app.applicationName,
             function(clientId, accessToken) {
@@ -90,7 +90,7 @@
               // 認証が得られなかった場合
             });
         };
-        
+
         var takePhoto = function() {
           var service = app.services.filter(function(s) {return s.name.indexOf("THETA") > -1})[0];
           // URLを作成します
