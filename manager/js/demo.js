@@ -61,7 +61,6 @@ function init() {
   dConnect.setHost(ip);
   dConnect.setSSLEnabled(location.protocol === 'https:');
   openWebsocketIfNeeded(accessToken);
-  searchDevice();
 }
 
 function showWebSocketState(state) {
@@ -126,6 +125,8 @@ function startManagerAndDemo() {
     }
     location.hash = "";
     location.hash = '#demo';
+    searchDevice();
+
     if (DEBUG) {
       console.log('URL: ' + location.href);
     }
@@ -250,7 +251,7 @@ function authorization(callback, oncalcel) {
                'tv', 'powermeter','humidity','illuminance', 'videochat',
                'airconditioner','gpio', 'ecg', 'stressEstimation', 'poseEstimation',
                'walkState', 'messagehook', 'atmosphericPressure', 'geolocation',
-               'echonetLite', 'power', 'fabo');
+               'echonetLite', 'power', 'fabo', 'mouse', 'keyboard', 'device');
   dConnect.authorization(scopes, 'Demo Web Site',
       function(clientId, newAccessToken) {
         // Client ID
@@ -433,5 +434,11 @@ function searchProfile(serviceId, profile) {
     showECHONETLite(serviceId);
   } else if (isEqualToStringIgnoreCase(profile, 'fabo')) {
     showFaBo(serviceId);
+  } else if (isEqualToStringIgnoreCase(profile, 'mouse')) {
+    showMouse(serviceId);
+  } else if (isEqualToStringIgnoreCase(profile, 'keyboard')) {
+    showKeyboard(serviceId);
+  } else if (isEqualToStringIgnoreCase(profile, 'device')) {
+    showDevice(serviceId);
   }
 }

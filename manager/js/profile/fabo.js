@@ -188,6 +188,30 @@ function showAddProfile(serviceId, jsonText) {
         {
             name : 'DeviceOrientation(3AXIS) #201',
             type : 102
+        },
+        {
+            name : 'Temperature(I2C) #207',
+            type : 103
+        },
+        {
+            name : 'Humidity(I2C) #208',
+            type : 104
+        },
+        {
+            name : 'Proximity(I2C) #205',
+            type : 105
+        },
+        {
+            name : 'Illuminace(I2C) #217',
+            type : 106
+        },
+        {
+            name : 'AtmosphericPressure(I2C) #204',
+            type : 107
+        },
+        {
+            name : 'Proximity(I2C) LIDARLite v3',
+            type : 108
         }
     ];
 
@@ -299,9 +323,6 @@ function doPostAddProfile(serviceId, vid, type, pins) {
     }
 
     var uri = builder.build();
-
-console.log("AAAA " + uri);
-
     dConnect.post(uri, null, null, function(json) {
         doGetVirtualServiceList(serviceId, function(services) {
             for (var i = 0; i < services.length; i++) {
