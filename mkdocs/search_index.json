@@ -107,7 +107,7 @@
         },
         {
             "location": "/toManager/",
-            "text": "location.href = './manager'",
+            "text": "location.href = '/manager'",
             "title": "\u2192 \u30c7\u30e2\u30b5\u30a4\u30c8\u306f\u3053\u3061\u3089"
         },
         {
