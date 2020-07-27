@@ -4,7 +4,7 @@ DeviceConnectはWeb APIなので、外部からコールすることもできま
 
 ![](/images/android/external-access-1.png)
 
-さらにOriginブロック機能が無効になっていることを確認してください。もしセキュアに使いたい場合は、Originブロック機能は有効にしつつ、Originホワイトリスト管理を使ってアクセス元ドメインを登録してください。例えば今回の例のように `http://deviceconnectusers.github.io/manager/` からアクセスする場合は `http://deviceconnectusers.github.io` を登録してください（最後はスラッシュなし）。
+さらにOriginブロック機能が無効になっていることを確認してください。もしセキュアに使いたい場合は、Originブロック機能は有効にしつつ、Origin許可リスト管理を使ってアクセス元ドメインを登録してください。例えば今回の例のように `http://deviceconnectusers.github.io/manager/` からアクセスする場合は `http://deviceconnectusers.github.io` を登録してください（最後はスラッシュなし）。
 
 ## アクセスする
 
